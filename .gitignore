@@ -1,0 +1,35 @@
+# Node.js / React
+node_modules/
+build/
+dist/
+*.log
+
+# Python / Django
+*.pyc
+__pycache__/
+*.sqlite3
+db.sqlite3
+venv/
+.env
+
+# Environment variables
+.env
+
+# Django specific files
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+
+# VSCode / IDE files
+.vscode/
+.idea/
+*.swp
+
+# MacOS specific
+.DS_Store
+
+# Log files
+*.log
