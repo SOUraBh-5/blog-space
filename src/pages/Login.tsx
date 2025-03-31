@@ -25,7 +25,7 @@ export function Login() {
 
   const onSubmit = async (data: LoginFormData) => {
     try {
-      const res = await fetch("http://localhost:8000/api/token/", {
+      const res = await fetch("blog-backend-production-09df.up.railway.app/api/token/", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -39,7 +39,7 @@ export function Login() {
 
       localStorage.setItem("token", json.access);
 
-      const userRes = await fetch("http://localhost:8000/api/user/", {
+      const userRes = await fetch("blog-backend-production-09df.up.railway.app/api/user/", {
         headers: { Authorization: `Bearer ${json.access}` },
       });
 

@@ -16,7 +16,7 @@ export function Home() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const response = await fetch('http://localhost:8000/api/posts/');
+        const response = await fetch('blog-backend-production-09df.up.railway.app/api/posts/');
         const data = await response.json();
         setPosts(data);
       } catch (error) {

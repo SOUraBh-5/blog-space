@@ -36,7 +36,7 @@ export function CreatePost() {
     }
 
     try {
-      const response = await fetch('http://localhost:8000/api/posts/create/', {
+      const response = await fetch('blog-backend-production-09df.up.railway.app/api/posts/create/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
