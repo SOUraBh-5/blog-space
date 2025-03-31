@@ -16,7 +16,7 @@ export function Home() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const response = await fetch('blog-backend-production-09df.up.railway.app/api/posts/');
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/posts`);
         const data = await response.json();
         setPosts(data);
       } catch (error) {

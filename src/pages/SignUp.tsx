@@ -29,7 +29,7 @@ export function SignUp() {
 
   const onSubmit = async (data: SignUpFormData) => {
     try {
-      const registerRes = await fetch('blog-backend-production-09df.up.railway.app/api/signup/', {
+      const registerRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/signup/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -45,7 +45,7 @@ export function SignUp() {
         return;
       }
 
-      const loginRes = await fetch('blog-backend-production-09df.up.railway.app/api/token/', {
+      const loginRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/token/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -58,7 +58,7 @@ export function SignUp() {
       const loginData = await loginRes.json();
       localStorage.setItem('token', loginData.access);
 
-      const userRes = await fetch('blog-backend-production-09df.up.railway.app/api/user/', {
+      const userRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/user/`, {
         headers: { Authorization: `Bearer ${loginData.access}` },
       });
       const userData = await userRes.json();

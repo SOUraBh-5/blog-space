@@ -30,7 +30,7 @@ export function EditPost() {
   useEffect(() => {
     async function fetchPost() {
       try {
-        const res = await fetch(`blog-backend-production-09df.up.railway.app/api/posts/${id}/`);
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/posts/${id}/`);
         const data = await res.json();
         if (data.username !== user?.username) {
           navigate('/');
@@ -53,7 +53,7 @@ export function EditPost() {
     if (!token || !id) return;
 
     try {
-      const res = await fetch(`blog-backend-production-09df.up.railway.app/api/posts/${id}/edit/`, {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/posts/${id}/edit/`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

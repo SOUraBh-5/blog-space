@@ -36,7 +36,7 @@ export function CreatePost() {
     }
 
     try {
-      const response = await fetch('blog-backend-production-09df.up.railway.app/api/posts/create/', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/posts/create/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

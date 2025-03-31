@@ -16,7 +16,7 @@ export function PostDetail() {
       if (!id) return;
 
       try {
-        const response = await fetch(`blog-backend-production-09df.up.railway.app/api/posts/${id}`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/posts/${id}`);
         const data = await response.json();
         setPost(data);
       } catch (error) {
@@ -35,7 +35,7 @@ export function PostDetail() {
 
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`blog-backend-production-09df.up.railway.app/api/posts/${id}/delete/`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/posts/${id}/delete/`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

@@ -1,3 +1,5 @@
+
+
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 interface AuthContextType {
@@ -27,7 +29,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     const fetchUser = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/posts/)/user/`, {
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/user/`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -59,3 +61,4 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 }
 
 export const useAuth = () => useContext(AuthContext);
+
